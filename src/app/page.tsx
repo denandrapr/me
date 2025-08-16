@@ -87,7 +87,7 @@ const cv = {
     },
     {
       name: "Mandiri Taspen Navigator",
-      description: "Compose + MVI enterprise app for navigation & services.",
+      description: "Compose + MVI, enterprise app for field system management services.",
     },
     {
       name: "Altea Care (100k+ installs)",
