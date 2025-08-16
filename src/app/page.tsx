@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const cv = {
   name: "Denandra Prasetya Laksma Putra",
-  photo: "/image.jpg",
+  photo: "/adra.jpeg",
   title: "Mobile Developer (Android | Kotlin | RN | Flutter)",
-  location: "Jakarta / Surabaya, Indonesia",
+  location: "Jakarta, Indonesia",
   contacts: [
     { label: "+62 822-2887-9229", href: "tel:+6282228879229" },
     { label: "prasetya.denandra@gmail.com", href: "mailto:prasetya.denandra@gmail.com" },
@@ -96,7 +96,7 @@ const cv = {
   education: [
     {
       school: "Universitas Dinamika (Stikom Surabaya)",
-      degree: "S.Kom., Information Systems (GPA 3.72/4.00)",
+      degree: "S1, Information Systems (GPA 3.72/4.00)",
       period: "2017 – 2021",
       notes: [
         "Graduated Cum Laude in 3.5 years",
