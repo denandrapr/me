@@ -43,7 +43,8 @@ const cv = {
         "Mandiri Taspen Navigator – Kotlin, Jetpack Compose, MVI.",
         "U+Reward – Java, MVP; shipped new features for 10k+ users on Play Store.",
         "BPP Revamp (Pertamina) – Kotlin, MVP, RxJava, Dagger for EDC devices in Jabodetabek & West Java.",
-        "Padma Hotel – React Native; Adira Website Mgmt – React.js; Akar Inti UX Template – Kotlin, Compose.",
+        "Padma Hotel – React Native; Adira Website Mgmt – React.js",
+        "Akar Inti UX Template – Kotlin, Compose.",
         "Altea Care – Kotlin; integrated MoEngage/Appsflyer (100k+ installs). Revivo – Java (50k+ installs).",
       ],
     },
@@ -54,7 +55,7 @@ const cv = {
       period: "Jun 2020 – Feb 2022",
       bullets: [
         "Perhutani incident management – React Native.",
-        "ADHI Karya apartment management – React Native (tenants & technicians workflows).",
+        "LRT City ADHI Karya apartment management – React Native (tenants & technicians workflows).",
         "Jaklingko Intermoda ticketing – React Native (MRT/LRT/KRL/TransJakarta).",
         "Refactored TINDA app from Java to Kotlin.",
       ],
