@@ -19,12 +19,12 @@ const cv = {
     "Mobile Developer with 5 years of experience building high-impact Android applications using Kotlin (Jetpack Compose, MVVM/MVI) and cross-platform solutions with React Native and Flutter. Proven ability to deliver and scale large consumer apps such as Blu by BCA Digital, with a strong focus on performance optimization, clean architecture, and seamless user experience.",
   skills: {
     mobile: ["Kotlin", "Jetpack Compose", "Coroutines/Flow", "Hilt/Dagger", "Java", "React Native (JS/TS)", "Flutter"],
-    webBackend: ["Next.js", "React.js", "Firebase", "SQL", "REST/Retrofit", "RxJava"],
+    webBackend: ["Next.js", "React.js", "Firebase", "SQL"],
     tools: ["Git/GitLab", "CI/CD", "Agile/Scrum", "Unit/UI Testing", "Crashlytics", "Appsflyer", "MoEngage"],
   },
   experiences: [
     {
-      company: "BCA Digital",
+      company: "PT. Bank Digital BCA",
       location: "Jakarta",
       role: "Android Developer (Vendor)",
       period: "Nov 2024 – Present",
