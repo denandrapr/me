@@ -9,14 +9,13 @@ const cv = {
   title: "Mobile Developer (Android | Kotlin | RN | Flutter)",
   location: "Jakarta, Indonesia",
   contacts: [
-    { label: "+62 822-2887-9229", href: "tel:+6282228879229" },
     { label: "prasetya.denandra@gmail.com", href: "mailto:prasetya.denandra@gmail.com" },
     { label: "LinkedIn", href: "https://linkedin.com/in/denandra-prasetya" },
     { label: "Github", href: "https://github.com/denandrapr" },
     { label: "Download CV (PDF)", href: "/cv_denandra.pdf" },
   ],
   summary:
-    "Mobile Developer with 5 years of experience building high-impact Android applications using Kotlin (Jetpack Compose, MVVM/MVI) and cross-platform solutions with React Native and Flutter. Proven ability to deliver and scale large consumer apps such as Blu by BCA Digital, with a strong focus on performance optimization, clean architecture, and seamless user experience.",
+    "5+ years building high-impact Android apps. Expert in Kotlin, Jetpack Compose, React Native. Specialized in performance optimization & clean architecture.",
   skills: {
     mobile: ["Kotlin", "Jetpack Compose", "Coroutines/Flow", "Hilt/Dagger", "Java", "React Native (JS/TS)", "Flutter"],
     webBackend: ["Next.js", "React.js", "Firebase", "SQL"],
@@ -24,34 +23,46 @@ const cv = {
   },
   experiences: [
     {
+      company: "PT Bank KEB Hana Indonesia",
+      location: "Jakarta (Full Time)",
+      role: "Android Developer",
+      period: "Nov 2025 – Present",
+      bullets: [
+        "Developed and enhanced key features for the LINE Bank Android application using Kotlin and the MVVM architecture.",
+      ],
+    },
+    {
       company: "PT. Bank Digital BCA",
-      location: "Jakarta",
-      role: "Android Developer (Vendor)",
-      period: "Nov 2024 – Present",
+      location: "Jakarta (Contract Vendor)",
+      role: "Android Developer",
+      period: "Nov 2024 – Oct 2025",
       bullets: [
         "Collaborate on Blu by BCA Digital app; migrated core features from React Native to Kotlin to improve performance & maintainability.",
-        "Owned bluExtraCash online-loan module; led development & optimizations across stability and performance.",
-        "Partnered with cross-functional teams to deliver features on schedule and with strong UX quality.",
+        "Contributed to rewriting the application from React Native to Kotlin, ensuring improved performance and maintainability.",
+        "Took full responsibility for the bluExtraCash module, a feature dedicated to online loans, managing development and performance optimization.",
+        "Assisted in debugging and implementing new features for other modules to enhance functionality and user experience.",
+        "Worked closely with cross-functional teams to deliver a high-quality, seamless mobile application.",
       ],
     },
     {
       company: "PT. Akar Inti Teknologi (Djarum Group)",
-      location: "Jakarta (Remote)",
+      location: "Jakarta (Full Time)",
       role: "Mobile Developer",
-      period: "Mar 2022 – Present",
+      period: "Mar 2022 – Oct 2025",
       bullets: [
         "Mandiri Taspen Navigator – Kotlin, Jetpack Compose, MVI.",
         "U+Reward – Java, MVP; shipped new features for 10k+ users on Play Store.",
         "BPP Revamp (Pertamina) – Kotlin, MVP, RxJava, Dagger for EDC devices in Jabodetabek & West Java.",
         "Padma Hotel – React Native; Adira Website Mgmt – React.js",
         "Akar Inti UX Template – Kotlin, Compose.",
-        "Altea Care – Kotlin; integrated MoEngage/Appsflyer (100k+ installs). Revivo – Java (50k+ installs).",
+        "Altea Care – Kotlin; integrated MoEngage/Appsflyer (100k+ installs).",
+        " Revivo – Java (50k+ installs)."
       ],
     },
     {
       company: "PT. Telkom Indonesia (DBT – Tribe ENT)",
-      location: "Jakarta",
-      role: "Mobile Developer (Contract)",
+      location: "Jakarta (Contract)",
+      role: "Mobile Developer",
       period: "Jun 2020 – Feb 2022",
       bullets: [
         "Perhutani incident management – React Native.",
@@ -62,8 +73,8 @@ const cv = {
     },
     {
       company: "PT. Vascomm Solusi Teknologi",
-      location: "Sidoarjo",
-      role: "Android Developer (Intern)",
+      location: "Sidoarjo (Internship)",
+      role: "Android Developer",
       period: "Feb 2020 – Apr 2020",
       bullets: [
         "Created chat application implementing Socket.io on Android with Kotlin.",
@@ -71,8 +82,8 @@ const cv = {
     },
     {
       company: "PT. Kasir Pintar",
-      location: "Surabaya",
-      role: "Android Developer (Intern)",
+      location: "Surabaya (Internship)",
+      role: "Android Developer",
       period: "Jul 2019 – Sep 2019",
       bullets: [
         "Fixed bugs and added features to Kitchen Management and Food Menu Android App (Java).",
@@ -86,12 +97,12 @@ const cv = {
         "Large-scale consumer banking app; Kotlin migration, feature ownership (bluExtraCash). Focus on performance & crash-free stability.",
     },
     {
-      name: "Mandiri Taspen Navigator",
-      description: "Compose + MVI, enterprise app for field system management services.",
+      name: "LINE Bank",
+      description: "Developed key features for the LINE Bank Android app using Kotlin and MVVM, enhancing performance, security, and user experience through effective collaboration.",
     },
     {
-      name: "Altea Care (100k+ installs)",
-      description: "Integrated MoEngage/Appsflyer marketing events in Kotlin.",
+      name: "Mandiri Taspen Navigator",
+      description: "Compose + MVI, enterprise app for field system management services.",
     },
   ],
   education: [
@@ -153,7 +164,7 @@ export default function Page() {
         <div className="mx-auto max-w-4xl px-4 py-3 flex items-center justify-center text-center">
           {/* Contacts & Actions */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            {cv.contacts.slice(0, 4).map((c) => (
+            {cv.contacts.slice(0, 3).map((c) => (
               <a
                 key={c.label}
                 href={c.href}
@@ -162,8 +173,8 @@ export default function Page() {
                 {c.label}
               </a>
             ))}
-            <a href={cv.contacts[4].href} className="rounded-lg px-3 py-1.5 border border-zinc-300 hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900">
-              {cv.contacts[4].label}
+            <a href={cv.contacts[3].href} className="rounded-lg px-3 py-1.5 border border-zinc-300 hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900">
+              {cv.contacts[3].label}
             </a>
           </div>
         </div>
@@ -234,7 +245,7 @@ export default function Page() {
               <li key={i} className="ms-6">
                 <span className="absolute -start-3 mt-1.5 h-5 w-5 rounded-full border border-zinc-300 bg-white dark:bg-zinc-900 dark:border-zinc-700" />
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="text-base font-semibold">{exp.role} — {exp.company}</h3>
+                  <h3 className="text-base font-semibold">{exp.company} — {exp.role}</h3>
                   <span className="text-sm text-zinc-500">{exp.period}</span>
                 </div>
                 <p className="text-sm text-zinc-500">{exp.location}</p>
