@@ -1,143 +1,199 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Image from "next/image";
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
+import {
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Code2,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Smartphone,
+  Sparkles,
+  Terminal,
+  Trophy,
+} from 'lucide-react';
 
 const cv = {
-  name: "Denandra Prasetya Laksma Putra",
-  photo: "/adra.jpeg",
-  title: "Mobile Developer",
-  location: "Jakarta, Indonesia",
+  name: 'Denandra Prasetya Laksma Putra',
+  photo: '/new_photo.png',
+  title: 'Mobile Developer',
+  location: 'Jakarta, Indonesia',
   contacts: [
-    { label: "prasetya.denandra@gmail.com", href: "mailto:prasetya.denandra@gmail.com" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/denandra-prasetya" },
-    { label: "Github", href: "https://github.com/denandrapr" },
+    { label: 'Email', value: 'prasetya.denandra@gmail.com', href: 'mailto:prasetya.denandra@gmail.com' },
+    { label: 'LinkedIn', value: 'LinkedIn', href: 'https://linkedin.com/in/denandra-prasetya' },
+    { label: 'Github', value: 'Github', href: 'https://github.com/denandrapr' },
   ],
   summary:
-    "Over 5 years of experience building Android apps using Kotlin, Java, and React Native. Comfortable working in collaborative teams, implementing product requirements, and paying attention to performance, code structure, and long-term maintainability.",
+    'Over 5 years of experience building Android apps using Kotlin, Java, and React Native. Comfortable working in collaborative teams, implementing product requirements, and paying attention to performance, code structure, and long-term maintainability.',
   skills: {
-    mobile: ["Kotlin", "Jetpack Compose", "Coroutines/Flow", "Hilt/Dagger", "Java", "React Native (JS/TS)", "Flutter"],
-    webBackend: ["Next.js", "React.js", "Firebase", "SQL"],
-    tools: ["Git/GitLab", "CI/CD", "Agile/Scrum", "Unit/UI Testing", "Crashlytics"],
+    mobile: ['Kotlin', 'Jetpack Compose', 'Coroutines/Flow', 'Hilt/Dagger', 'Java', 'React Native (JS/TS)', 'Flutter'],
+    frontend: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS'],
+    tools: ['Git/GitLab', 'CI/CD', 'Agile/Scrum', 'Unit/UI Testing', 'Crashlytics'],
   },
   experiences: [
     {
-      company: "PT Bank KEB Hana Indonesia",
-      location: "Jakarta (Full Time)",
-      role: "Android Developer",
-      period: "Nov 2025 – Present",
+      company: 'PT Bank KEB Hana Indonesia',
+      location: 'Jakarta, Indonesia',
+      role: 'Android Developer',
+      period: 'Nov 2025 - Present',
       bullets: [
-        "Developed and enhanced key features for the LINE Bank Android application using Kotlin and the MVVM architecture.",
+        'Developing and maintaining the LINE Bank by Hana Bank mobile application.',
+        'Focusing on delivering a secure, high-performance, and seamless digital banking experience for users.',
       ],
     },
     {
-      company: "PT. Bank Digital BCA",
-      location: "Jakarta (Contract Vendor)",
-      role: "Android Developer",
-      period: "Nov 2024 – Oct 2025",
+      company: 'PT Bank Digital BCA (BCA Digital)',
+      location: 'Jakarta, Indonesia',
+      role: 'Android Developer',
+      period: 'Nov 2024 - Oct 2025',
       bullets: [
-        "Collaborate on Blu by BCA Digital app; migrated core features from React Native to Kotlin to improve performance & maintainability.",
-        "Contributed to rewriting the application from React Native to Kotlin, ensuring improved performance and maintainability.",
-        "Took full responsibility for the bluExtraCash module, a feature dedicated to online loans, managing development and performance optimization.",
-        "Assisted in debugging and implementing new features for other modules to enhance functionality and user experience.",
-        "Worked closely with cross-functional teams to deliver a high-quality, seamless mobile application.",
+        'Dedicated Vendor for the blu by BCA Digital mobile application.',
+        'Responsible for the blu ExtraCash module, managing feature development and integration for digital loan services.',
       ],
     },
     {
-      company: "PT. Akar Inti Teknologi (Djarum Group)",
-      location: "Jakarta (Full Time)",
-      role: "Mobile Developer",
-      period: "Mar 2022 – Oct 2025",
+      company: 'Akar Inti Teknologi',
+      location: 'Jakarta (Full Time)',
+      role: 'Android Developer',
+      period: 'Mar 2022 - Oct 2025',
       bullets: [
-        "Mandiri Taspen Navigator – Kotlin, Jetpack Compose, MVI.",
-        "U+Reward – Java, MVP; shipped new features for 10k+ users on Play Store.",
-        "BPP Revamp (Pertamina) – Kotlin, MVP, RxJava, Dagger for EDC devices in Jabodetabek & West Java.",
-        "Padma Hotel – React Native; Adira Website Mgmt – React.js",
-        "Akar Inti UX Template – Kotlin, Compose.",
-        "Altea Care – Kotlin; integrated MoEngage/Appsflyer (100k+ installs).",
-        " Revivo – Java (50k+ installs)."
+        'Full-time remote Android Developer at Akar Inti Teknologi (AIT), part of the Djarum Group.',
+        'Developed mobile solutions for banking, healthcare, and loyalty sectors using Kotlin (Jetpack Compose, MVI/MVP) and Java.',
+        'Built Mandiri Taspen Navigator and revamped BPP Pertamina for EDC devices.',
+        'Integrated MoEngage and AppsFlyer for Altea Care (100k+ installs) and supported cross-platform apps using React Native/React.js.',
+        'Created an internal UX Template to streamline UI development for future company projects.',
       ],
     },
     {
-      company: "PT. Telkom Indonesia (DBT – Tribe ENT)",
-      location: "Jakarta (Contract)",
-      role: "Mobile Developer",
-      period: "Jun 2020 – Feb 2022",
+      company: 'Telkom Indonesia',
+      location: 'Jakarta Pusat, Jakarta Raya, Indonesia',
+      role: 'Mobile Developer',
+      period: 'Jun 2020 - Mar 2022',
       bullets: [
-        "Perhutani incident management – React Native.",
-        "LRT City ADHI Karya apartment management – React Native (tenants & technicians workflows).",
-        "Jaklingko Intermoda ticketing – React Native (MRT/LRT/KRL/TransJakarta).",
-        "Rewrite TINDA app from Java to Kotlin.",
+        'Full-time contract Mobile Developer at Telkom Indonesia, part of Telkom DBT in Tribe ENT.',
+        'Collaborated with other developers on several external projects using React Native and Kotlin for mobile application development.',
+        'Developed the PERHUTANI incident management application used by employees to report accidents in the Perhutani environment.',
+        'Developed the ADHI KARYA apartment management application for tenant complaints, IPL payments, electricity and water payments, technician monitoring, and apartment handovers.',
+        'Developed Jaklingko Intermoda tender application for purchasing MRT, LRT, KRL, and Transjakarta tickets using React Native.',
+        'Rewrote the TINDA application from Java to Kotlin.',
       ],
     },
     {
-      company: "PT. Vascomm Solusi Teknologi",
-      location: "Sidoarjo (Internship)",
-      role: "Android Developer",
-      period: "Feb 2020 – Apr 2020",
+      company: 'DOT Indonesia',
+      location: 'Remote',
+      role: 'Mobile Developer',
+      period: 'Jun 2021 - Nov 2021',
       bullets: [
-        "Created chat application implementing Socket.io on Android with Kotlin.",
+        'Freelance mobile developer at PT. DOT Indonesia.',
+        'Collaborated with other developers to develop and fix bugs for Sakoo Mobile and Alami Hijra Banking mobile applications using React Native.',
       ],
     },
     {
-      company: "PT. Kasir Pintar",
-      location: "Surabaya (Internship)",
-      role: "Android Developer",
-      period: "Jul 2019 – Sep 2019",
+      company: 'Vascomm',
+      location: 'Surabaya dan Sekitarnya, Jawa Timur, Indonesia',
+      role: 'Android Developer Internship',
+      period: 'Feb 2020 - Apr 2020',
       bullets: [
-        "Fixed bugs and added features to Kitchen Management and Food Menu Android App (Java).",
+        'Internship at PT Vascomm Solusi Teknologi as Mobile Developer.',
+        'Built chat app using Kotlin and connecting to REST API and real-time service Socket.io.',
+      ],
+    },
+    {
+      company: 'PT Kasir Pintar Internasional',
+      location: 'Surabaya dan Sekitarnya, Jawa Timur, Indonesia',
+      role: 'Android Engineer Internship',
+      period: 'Jul 2019 - Sep 2019',
+      bullets: [
+        'Internship at Kasir Pintar as Android Engineer.',
+        'Developed Kitchen Management and Food Menu using Java.',
+      ],
+    },
+    {
+      company: 'STIKOM Surabaya',
+      location: 'Surabaya, Indonesia',
+      role: 'Computer Lab Assistant',
+      period: 'Jan 2019 - May 2019',
+      bullets: [
+        'Assisted the lecturer in delivering Basic Programming material using Java to other students.',
       ],
     },
   ],
   projects: [
     {
-      name: "Blu by BCA Digital",
+      name: 'Blu by BCA Digital',
       description:
-        "Large-scale consumer banking app; Kotlin migration, feature ownership (bluExtraCash). Focus on performance & crash-free stability.",
+        'Large-scale consumer banking app; Kotlin migration, feature ownership for bluExtraCash, and performance-focused delivery.',
     },
     {
-      name: "LINE Bank",
-      description: "Developed key features for the LINE Bank Android app using Kotlin and MVVM, enhancing performance, security, and user experience through effective collaboration.",
+      name: 'LINE Bank',
+      description:
+        'Developed key features for the LINE Bank Android app using Kotlin and MVVM, with focus on performance, security, and collaboration.',
     },
     {
-      name: "Mandiri Taspen Navigator",
-      description: "Compose + MVI, enterprise app for field system management services.",
+      name: 'Mandiri Taspen Navigator',
+      description: 'Enterprise field service app built with Kotlin, Jetpack Compose, and MVI architecture.',
     },
   ],
   education: [
     {
-      school: "Universitas Dinamika (Stikom Surabaya)",
-      degree: "S1, Information Systems (GPA 3.72/4.00)",
-      period: "2017 – 2021",
+      school: 'Universitas Dinamika (Stikom Surabaya)',
+      degree: 'S1, Information Systems (GPA 3.72/4.00)',
+      period: '2017 - 2021',
       notes: [
-        "Graduated Cum Laude in 3.5 years",
-        "ITCC Udayana Finalist (Android) 2019",
-        "1st Place HIMA IS Programming 2018"
+        'Graduated Cum Laude in 3.5 years',
+        'ITCC Udayana Finalist (Android) 2019',
+        '1st Place HIMA IS Programming 2018',
       ],
     },
     {
-      school: "SMKN 1 Denpasar",
-      degree: "High School Diploma, Software Engineering",
-      period: "2014 – 2017",
+      school: 'SMKN 1 Denpasar',
+      degree: 'High School Diploma, Software Engineering',
+      period: '2014 - 2017',
       notes: [
-        "3rd Place in FIKSI SMK 2016"
+        '3rd Place in FIKSI SMK 2016',
       ],
     },
   ],
   achievements: [
     {
-      name: "2nd place – ICP 6.0 Hackathon (2024)",
-      detail: "Built NFT-based agricultural investment platform leveraging ICP for security & decentralization.",
-      link: "https://drive.google.com/file/d/1qRf3xudF_RkRSLGK6uSnV1BWcGRusFqh/view?usp=sharing",
+      name: '2nd place - ICP 6.0 Hackathon (2024)',
+      detail: 'Built NFT-based agricultural investment platform leveraging ICP for security and decentralization.',
+      link: 'https://drive.google.com/file/d/1qRf3xudF_RkRSLGK6uSnV1BWcGRusFqh/view?usp=sharing',
     },
   ],
 };
 
-// ——— Animation Wrapper ———
+const heroStats = ['5+ years', 'Android/Kotlin', 'React Native', 'Jakarta'];
+
+const skillGroups = [
+  {
+    label: 'Mobile',
+    description: 'Native Android, cross-platform delivery, and production app architecture.',
+    icon: Smartphone,
+    items: cv.skills.mobile,
+  },
+  {
+    label: 'Frontend',
+    description: 'Clean web interfaces, responsive layouts, and product-facing React surfaces.',
+    icon: Code2,
+    items: cv.skills.frontend,
+  },
+  {
+    label: 'Tools & Practices',
+    description: 'Delivery habits for stable releases, debugging, automation, and quality.',
+    icon: Terminal,
+    items: cv.skills.tools,
+  },
+];
+
 function FadeInUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
     <motion.div
@@ -151,300 +207,403 @@ function FadeInUp({ children, delay = 0 }: { children: React.ReactNode; delay?: 
   );
 }
 
-// ——— UI Helpers ———
-function Badge({ children }: { children: React.ReactNode }) {
+function Section({
+  eyebrow,
+  title,
+  children,
+  id,
+}: {
+  eyebrow: string;
+  title: string;
+  children: React.ReactNode;
+  id: string;
+}) {
   return (
-    <motion.span
-      whileHover={{ scale: 1.08 }}
-      transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide cursor-default select-none
-        border-cyan-500/30 bg-cyan-950/40 text-cyan-400 hover:bg-cyan-900/50 transition-colors duration-200"
-    >
+    <section className="scroll-mt-24 py-14 md:py-20" id={id}>
+      <FadeInUp>
+        <div className="mb-8 max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">{eyebrow}</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 md:text-4xl">{title}</h2>
+        </div>
+      </FadeInUp>
       {children}
-    </motion.span>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="scroll-mt-20" id={title.toLowerCase().replace(/\s+/g, "-")}>
-      <h2 className="text-xl font-semibold text-zinc-100 mb-4 flex items-center gap-3">
-        <span className="h-5 w-1 rounded-full bg-gradient-to-b from-cyan-500 to-teal-500 inline-block" />
-        {title}
-      </h2>
-      <div className="space-y-3">{children}</div>
     </section>
   );
 }
 
-function Divider() {
-  return <hr className="my-8 border-zinc-800/60" />;
-}
-
-function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div
-      whileHover={{ y: -3, boxShadow: "0 8px 30px -8px rgba(34, 211, 238, 0.2)" }}
-      transition={{ type: "spring", stiffness: 350, damping: 25 }}
-      className={`rounded-2xl border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-sm p-4 ${className}`}
-    >
+    <span className="inline-flex min-h-8 items-center rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-200">
       {children}
-    </motion.div>
+    </span>
   );
 }
 
-// ——— Page Component ———
-export default function Page() {
+function Header() {
+  const navItems = [
+    { label: 'Skills', href: '#skills' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#experience' },
+  ];
+
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-200 antialiased selection:bg-cyan-900 selection:text-cyan-100">
-
-      {/* Subtle background glow blobs */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-cyan-600/5 blur-3xl" />
-        <div className="absolute top-1/3 -left-40 h-72 w-72 rounded-full bg-teal-600/5 blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-cyan-700/5 blur-3xl" />
+    <header className="sticky top-0 z-40 border-b border-white/5 bg-zinc-950/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+        <a className="text-sm font-semibold tracking-tight text-zinc-100" href="#top">
+          nndraa.space
+        </a>
+        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 text-sm text-zinc-400 md:flex">
+          {navItems.map((item) => (
+            <a
+              className="rounded-full px-4 py-2 transition hover:bg-emerald-400/10 hover:text-emerald-200"
+              href={item.href}
+              key={item.label}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex items-center gap-2">
+          <a
+            aria-label="Email Denandra"
+            className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-300 transition hover:border-emerald-400/40 hover:text-emerald-300"
+            href={cv.contacts[0].href}
+          >
+            <Mail size={16} />
+          </a>
+          <a
+            aria-label="LinkedIn profile"
+            className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-300 transition hover:border-emerald-400/40 hover:text-emerald-300"
+            href={cv.contacts[1].href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Linkedin size={16} />
+          </a>
+          <a
+            aria-label="Github profile"
+            className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-zinc-300 transition hover:border-emerald-400/40 hover:text-emerald-300"
+            href={cv.contacts[2].href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Github size={16} />
+          </a>
+        </div>
       </div>
+    </header>
+  );
+}
 
-      {/* ——— Header ——— */}
-      <header className="sticky top-0 z-30 backdrop-blur-md bg-zinc-950/70 border-b border-zinc-800/60">
-        <div className="mx-auto max-w-4xl px-4 py-3 flex items-center justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            {cv.contacts.map((c) => (
-              <a
-                key={c.label}
-                href={c.href}
-                className="text-zinc-400 underline underline-offset-4 decoration-zinc-700
-                  hover:text-cyan-400 hover:decoration-cyan-500 transition-colors duration-200"
-              >
-                {c.label}
-              </a>
+function Hero() {
+  return (
+    <section
+      className="hero-contours relative min-h-[calc(100svh-72px)] overflow-hidden"
+      id="top"
+    >
+      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-72px)] max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] md:py-20">
+        <div>
+        <FadeInUp>
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1.5 text-sm font-medium text-emerald-200">
+            <Sparkles size={15} />
+            Mobile apps with clean architecture and steady delivery
+          </div>
+        </FadeInUp>
+        <FadeInUp delay={0.05}>
+          <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-tight text-zinc-50 md:text-7xl">
+            {cv.name}
+          </h1>
+        </FadeInUp>
+        <FadeInUp delay={0.1}>
+          <p className="mt-5 text-2xl font-medium text-emerald-300 md:text-3xl">{cv.title}</p>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-400 md:text-lg">
+            I build Android and cross-platform mobile products that are maintainable, performant, and practical for real product teams.
+          </p>
+        </FadeInUp>
+        <FadeInUp delay={0.15}>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <motion.a
+              className="inline-flex min-h-12 items-center gap-2 rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-zinc-950 shadow-[0_18px_60px_-18px_rgba(52,211,153,0.75)] transition hover:bg-emerald-300"
+              href="/cv_denandra.pdf"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Download size={17} />
+              Download CV
+            </motion.a>
+            <motion.a
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-emerald-400/40 hover:text-emerald-200"
+              href="#projects"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              View projects
+              <ArrowUpRight size={17} />
+            </motion.a>
+          </div>
+        </FadeInUp>
+        <FadeInUp delay={0.2}>
+          <div className="mt-8 flex flex-wrap gap-2">
+            {heroStats.map((stat) => (
+              <Pill key={stat}>{stat}</Pill>
+            ))}
+          </div>
+        </FadeInUp>
+        </div>
+
+        <FadeInUp delay={0.12}>
+          <div className="relative mx-auto flex min-h-[390px] w-full max-w-md items-center justify-center md:min-h-[460px]">
+            <div className="absolute inset-6 rounded-full border border-emerald-400/10 bg-emerald-400/[0.03] blur-3xl" />
+            <div className="absolute h-72 w-72 rounded-full border border-dashed border-emerald-300/20 md:h-80 md:w-80" />
+            <div className="absolute h-52 w-52 rounded-full border border-white/10 md:h-60 md:w-60" />
+
+            <motion.div
+              className="absolute left-2 top-8 rounded-2xl border border-white/10 bg-zinc-950/75 px-4 py-3 text-sm text-zinc-300 shadow-2xl shadow-black/20 backdrop-blur-xl md:left-0 md:top-14"
+              initial={{ opacity: 0, x: -14 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.35, duration: 0.5 }}
+            >
+              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Focus</span>
+              Android + Kotlin
+            </motion.div>
+
+            <motion.div
+              className="absolute right-0 top-12 z-20 rounded-2xl border border-white/10 bg-zinc-950/80 px-4 py-3 text-sm text-zinc-300 shadow-2xl shadow-black/20 backdrop-blur-xl md:-right-8 md:top-16"
+              initial={{ opacity: 0, x: 14 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+            >
+              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Based in</span>
+              {cv.location}
+            </motion.div>
+
+            <div className="relative rounded-full border border-emerald-300/20 bg-zinc-950/80 p-3 shadow-[0_32px_100px_-32px_rgba(52,211,153,0.6)]">
+              <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-emerald-300/30 via-transparent to-emerald-700/20 blur-xl" />
+              <div className="relative h-52 w-52 overflow-hidden rounded-full border border-white/10 bg-zinc-900 ring-8 ring-zinc-950 md:h-64 md:w-64">
+                <Image
+                  alt={cv.name}
+                  className="object-cover"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 256px, 208px"
+                  src={cv.photo}
+                />
+              </div>
+            </div>
+
+            <div className="absolute bottom-0 left-1/2 w-[min(100%,22rem)] -translate-x-1/2 rounded-3xl border border-white/10 bg-zinc-950/80 p-4 text-center backdrop-blur-xl md:bottom-4">
+              <p className="text-sm font-semibold text-zinc-100">{cv.title}</p>
+              <p className="mt-1 text-sm leading-6 text-zinc-400">Building reliable mobile experiences with product-minded engineering.</p>
+            </div>
+          </div>
+        </FadeInUp>
+      </div>
+    </section>
+  );
+}
+
+function SkillPanel({
+  group,
+  delay,
+}: {
+  group: (typeof skillGroups)[number];
+  delay: number;
+}) {
+  const Icon = group.icon;
+
+  return (
+    <FadeInUp delay={delay}>
+      <motion.article
+        className="h-full rounded-3xl border border-white/10 bg-white/[0.035] p-5 shadow-2xl shadow-black/10 transition hover:border-emerald-400/30 hover:bg-emerald-400/[0.04]"
+        whileHover={{ y: -4 }}
+      >
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="grid h-11 w-11 place-items-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
+              <Icon size={21} />
+            </div>
+            <h3 className="mt-5 text-xl font-semibold text-zinc-50">{group.label}</h3>
+          </div>
+          <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-zinc-400">{group.items.length} tools</span>
+        </div>
+        <p className="mt-3 min-h-16 text-sm leading-6 text-zinc-400">{group.description}</p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {group.items.map((skill) => (
+            <span
+              className="rounded-full border border-zinc-700/80 bg-zinc-950/50 px-3 py-1.5 text-xs font-medium text-zinc-300"
+              key={skill}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </motion.article>
+    </FadeInUp>
+  );
+}
+
+function ProjectCard({ project, index }: { project: (typeof cv.projects)[number]; index: number }) {
+  return (
+    <FadeInUp delay={index * 0.08}>
+      <motion.article
+        className="group flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-950 p-6 shadow-2xl shadow-black/10 transition hover:border-emerald-400/30"
+        whileHover={{ y: -5 }}
+      >
+        <div>
+          <div className="mb-8 flex items-center justify-between">
+            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-300">
+              Featured
+            </span>
+            <ArrowUpRight className="text-zinc-600 transition group-hover:text-emerald-300" size={20} />
+          </div>
+          <h3 className="text-2xl font-semibold tracking-tight text-zinc-50">{project.name}</h3>
+          <p className="mt-4 text-sm leading-7 text-zinc-400">{project.description}</p>
+        </div>
+        <div className="mt-8 h-px w-full bg-gradient-to-r from-emerald-400/50 via-emerald-400/10 to-transparent" />
+      </motion.article>
+    </FadeInUp>
+  );
+}
+
+function ExperienceTimeline() {
+  return (
+    <div className="space-y-4">
+      {cv.experiences.map((exp, index) => (
+        <FadeInUp delay={index * 0.05} key={`${exp.company}-${exp.period}`}>
+          <article className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-emerald-400/25 md:p-6">
+            <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+              <div>
+                <p className="text-sm font-medium text-emerald-300">{exp.role}</p>
+                <h3 className="mt-1 text-lg font-semibold text-zinc-50">{exp.company}</h3>
+                <p className="mt-1 text-sm text-zinc-500">{exp.location}</p>
+              </div>
+              <span className="w-fit rounded-full border border-white/10 px-3 py-1 text-xs font-medium text-zinc-400">{exp.period}</span>
+            </div>
+            <ul className="mt-5 grid gap-2 text-sm leading-6 text-zinc-400 md:grid-cols-2">
+              {exp.bullets.map((bullet) => (
+                <li className="flex gap-3" key={bullet}>
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </FadeInUp>
+      ))}
+    </div>
+  );
+}
+
+function SupportingSections() {
+  return (
+    <section className="grid gap-6 py-14 md:grid-cols-[1.1fr_0.9fr] md:py-20">
+      <FadeInUp>
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
+              <BriefcaseBusiness size={20} />
+            </div>
+            <h2 className="text-2xl font-semibold text-zinc-50">Education</h2>
+          </div>
+          <div className="space-y-5">
+            {cv.education.map((ed) => (
+              <div className="border-t border-white/10 pt-5 first:border-t-0 first:pt-0" key={ed.school}>
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="font-semibold text-zinc-100">{ed.school}</h3>
+                  <span className="text-xs font-medium text-zinc-500">{ed.period}</span>
+                </div>
+                <p className="mt-1 text-sm text-zinc-400">{ed.degree}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {ed.notes.map((note) => (
+                    <span className="rounded-full bg-zinc-900 px-3 py-1 text-xs text-zinc-400" key={note}>
+                      {note}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      </header>
+      </FadeInUp>
 
-      {/* ——— Hero ——— */}
-      <section className="mx-auto max-w-4xl px-4 pt-12 pb-8">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
-
-          {/* Photo */}
-          <FadeInUp>
-            <div className="relative h-28 w-28 md:h-40 md:w-40 overflow-hidden rounded-full ring-2 ring-zinc-800 flex-none mx-auto md:mx-0">
-              <Image
-                src={cv.photo}
-                alt={cv.name}
-                fill
-                sizes="(min-width: 768px) 160px, 112px"
-                className="object-cover"
-                priority
-              />
+      <FadeInUp delay={0.08}>
+        <div className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.06] p-6">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10 text-emerald-200">
+              <Trophy size={20} />
             </div>
-          </FadeInUp>
-
-          {/* Info */}
-          <div className="flex-1 min-w-0 text-center md:text-left">
-            <FadeInUp delay={0.05}>
-              <h1 className="text-2xl md:text-3xl font-semibold tracking-tight bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
-                {cv.name}
-              </h1>
-              <p className="mt-1 text-sm font-medium text-cyan-400">{cv.title}</p>
-              <p className="mt-0.5 text-zinc-500 text-sm">{cv.location}</p>
-            </FadeInUp>
-
-            <FadeInUp delay={0.1}>
-              <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400 text-sm mx-auto md:mx-0">{cv.summary}</p>
-            </FadeInUp>
-
-            <FadeInUp delay={0.15}>
-              <div className="mt-4 flex flex-wrap gap-3 justify-center md:hidden">
-                {cv.contacts.map((c) => (
-                  <a key={c.label} href={c.href}
-                    className="text-sm underline underline-offset-4 decoration-zinc-300 hover:text-cyan-400 transition-colors duration-200">
-                    {c.label}
-                  </a>
-                ))}
-              </div>
-              <div className="mt-6 flex gap-3 justify-center md:justify-start print:hidden flex-wrap">
-                {[
-                  { label: "Skills", href: "#skills" },
-                  { label: "Experience", href: "#experience" },
-                  { label: "Projects", href: "#project" },
-                ].map((nav) => (
-                  <motion.a
-                    key={nav.label}
-                    href={nav.href}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="rounded-xl px-4 py-2 text-sm font-medium border
-                      border-zinc-700 hover:border-cyan-600 hover:text-cyan-300 hover:bg-cyan-950/40 transition-all duration-200"
-                  >
-                    {nav.label}
-                  </motion.a>
-                ))}
-              </div>
-            </FadeInUp>
+            <h2 className="text-2xl font-semibold text-zinc-50">Achievement</h2>
           </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* ——— Skills ——— */}
-      <div className="mx-auto max-w-4xl px-4">
-        <FadeInUp>
-          <Section title="Skills">
-            <div className="grid md:grid-cols-3 gap-6" id="skills">
-              {[
-                { label: "Mobile", items: cv.skills.mobile },
-                { label: "Web & Backend", items: cv.skills.webBackend },
-                { label: "Tools & Practices", items: cv.skills.tools },
-              ].map((group, i) => (
-                <FadeInUp key={group.label} delay={i * 0.07}>
-                  <div>
-                    <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-cyan-400">{group.label}</h3>
-                    <div className="flex flex-wrap gap-2">{group.items.map((s) => <Badge key={s}>{s}</Badge>)}</div>
-                  </div>
-                </FadeInUp>
-              ))}
+          {cv.achievements.map((achievement) => (
+            <div key={achievement.name}>
+              <h3 className="text-lg font-semibold text-zinc-50">{achievement.name}</h3>
+              <p className="mt-3 text-sm leading-7 text-zinc-300">{achievement.detail}</p>
+              <a
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 hover:text-emerald-100"
+                href={achievement.link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Proof / Details
+                <ArrowUpRight size={16} />
+              </a>
             </div>
-          </Section>
-        </FadeInUp>
-      </div>
-
-      <Divider />
-
-      {/* ——— Experience ——— */}
-      <div className="mx-auto max-w-4xl px-4">
-        <FadeInUp>
-          <Section title="Experience">
-            <ol className="relative border-s-2 border-zinc-800 space-y-6" id="experience">
-              {cv.experiences.map((exp, i) => (
-                <FadeInUp key={i} delay={i * 0.06}>
-                  <li className="ms-6 relative">
-                    {/* Timeline dot with accent */}
-                    <span className="absolute -start-[1.65rem] mt-1.5 flex h-5 w-5 items-center justify-center rounded-full
-                      border-2 border-cyan-600 bg-zinc-950 ring-4 ring-zinc-950">
-                      <span className="h-2 w-2 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500" />
-                    </span>
-
-                    <Card>
-                      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                        <h3 className="text-base font-semibold text-zinc-100">
-                          {exp.company}
-                          <span className="text-cyan-400"> — </span>
-                          {exp.role}
-                        </h3>
-                        <span className="text-xs font-medium text-zinc-500 whitespace-nowrap">{exp.period}</span>
-                      </div>
-                      <p className="text-xs text-zinc-600 mt-0.5">{exp.location}</p>
-                      <ul className="mt-2 list-disc ps-5 space-y-1 text-sm leading-relaxed text-zinc-400">
-                        {exp.bullets.map((b, bi) => (
-                          <li key={bi}>{b}</li>
-                        ))}
-                      </ul>
-                    </Card>
-                  </li>
-                </FadeInUp>
-              ))}
-            </ol>
-          </Section>
-        </FadeInUp>
-      </div>
-
-      <Divider />
-
-      {/* ——— Selected Projects ——— */}
-      <div className="mx-auto max-w-4xl px-4">
-        <FadeInUp>
-          <Section title="Selected Projects">
-            <div className="grid md:grid-cols-3 gap-4" id="project">
-              {cv.projects.map((p, i) => (
-                <FadeInUp key={p.name} delay={i * 0.08}>
-                  <Card>
-                    <h3 className="font-semibold text-zinc-100">{p.name}</h3>
-                    <p className="mt-1 text-sm text-zinc-400 leading-relaxed">{p.description}</p>
-                  </Card>
-                </FadeInUp>
-              ))}
-            </div>
-          </Section>
-        </FadeInUp>
-      </div>
-
-      <Divider />
-
-      {/* ——— Education & Achievements ——— */}
-      <div className="mx-auto max-w-4xl px-4">
-        <FadeInUp>
-          <Section title="Education">
-            <div className="space-y-3">
-              {cv.education.map((ed, i) => (
-                <FadeInUp key={ed.school} delay={i * 0.08}>
-                  <Card>
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                      <h3 className="font-semibold text-zinc-100">{ed.school}</h3>
-                      <span className="text-xs font-medium text-zinc-500">{ed.period}</span>
-                    </div>
-                    <p className="text-sm text-zinc-400">{ed.degree}</p>
-                    {ed.notes?.length ? (
-                      <ul className="mt-2 list-disc ps-5 text-sm text-zinc-500 space-y-1">
-                        {ed.notes.map((n) => (
-                          <li key={n}>{n}</li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </Card>
-                </FadeInUp>
-              ))}
-            </div>
-          </Section>
-        </FadeInUp>
-
-        <div className="mt-6" id="achievements">
-          <FadeInUp>
-            <Section title="Achievements">
-              <ul className="space-y-3">
-                {cv.achievements.map((a) => (
-                  <FadeInUp key={a.name}>
-                    <Card>
-                      <li>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
-                          <p className="font-semibold text-zinc-100">{a.name}</p>
-                          {a.link && (
-                            <a href={a.link}
-                              className="text-sm font-medium text-cyan-400 underline underline-offset-4
-                                decoration-cyan-700 hover:text-cyan-300 transition-colors"
-                            >
-                              Proof / Details →
-                            </a>
-                          )}
-                        </div>
-                        <p className="text-sm text-zinc-400 mt-1">{a.detail}</p>
-                      </li>
-                    </Card>
-                  </FadeInUp>
-                ))}
-              </ul>
-            </Section>
-          </FadeInUp>
-        </div>
-      </div>
-
-      <Divider />
-
-      {/* ——— Footer ——— */}
-      <footer className="mx-auto max-w-4xl px-4 pb-12 text-sm text-zinc-500">
-        <div className="flex flex-wrap items-center gap-4">
-          {cv.contacts.map((c) => (
-            <a key={c.label} href={c.href}
-              className="underline underline-offset-4 decoration-zinc-700 hover:text-cyan-400 transition-colors duration-200"
-            >
-              {c.label}
-            </a>
           ))}
         </div>
-        <p className="mt-4 text-zinc-600">© {new Date().getFullYear()} {cv.name}. All rights reserved.</p>
-      </footer>
+      </FadeInUp>
+    </section>
+  );
+}
+
+export default function Page() {
+  return (
+    <main className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.16),transparent_32rem),linear-gradient(180deg,#09090b_0%,#0b1110_45%,#09090b_100%)] text-zinc-200 antialiased selection:bg-emerald-400 selection:text-zinc-950">
+      <div className="pointer-events-none fixed inset-0 opacity-40" aria-hidden>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px]" />
+      </div>
+      <Header />
+      <Hero />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-5">
+        <Section eyebrow="Capability" id="skills" title="Skill sets shaped by real product delivery.">
+          <div className="grid gap-5 md:grid-cols-3">
+            {skillGroups.map((group, index) => (
+              <SkillPanel delay={index * 0.08} group={group} key={group.label} />
+            ))}
+          </div>
+        </Section>
+
+        <Section eyebrow="Selected Work" id="projects" title="Mobile products with scale, ownership, and polish.">
+          <div className="grid gap-5 md:grid-cols-3">
+            {cv.projects.map((project, index) => (
+              <ProjectCard index={index} key={project.name} project={project} />
+            ))}
+          </div>
+        </Section>
+
+        <Section eyebrow="Experience" id="experience" title="A compact view of the roles behind the work.">
+          <ExperienceTimeline />
+        </Section>
+
+        <SupportingSections />
+
+        <footer className="flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} {cv.name}. All rights reserved.</p>
+          <div className="flex flex-wrap gap-4">
+            {cv.contacts.map((contact) => (
+              <a
+                className="font-medium text-zinc-400 transition hover:text-emerald-300"
+                href={contact.href}
+                key={contact.label}
+                rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
+                target={contact.href.startsWith('http') ? '_blank' : undefined}
+              >
+                {contact.value}
+              </a>
+            ))}
+          </div>
+        </footer>
+      </div>
     </main>
   );
 }
